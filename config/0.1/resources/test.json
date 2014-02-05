@@ -1,0 +1,27 @@
+[{
+    "path": "test",
+    "methods": ["post"],
+    "params": {
+        "url"               : "required",    // The URL to test string
+        "location"          : "optional",    // Test location ID  string
+        "login"             : "optional",    // HTTP access authentication type string (basic, digest) Default ( basic )
+        "login-user"        : "optional",    // Username for HTTP access authentication string
+        "login-pass"        : "optional",    // Password for HTTP access authentication string
+        "x-metrix-adblock"  : "optional",    // Enable AdBlock  integer (0, 1) Default ( 0 )
+        "x-metrix-cookies"  : "optional",    // Cookies to send with the request string
+        "x-metrix-video"    : "optional"     // Enable generation of video -- due to extra storage and processing requirements, a video test requires 5 api credits integer (0, 1)  No  0
+    }
+}, {
+    "path": "test/{test_id}",
+    "methods": ["get"],
+    "params": {
+        "test_id"           : "required",    // The test ID returned after starting the test
+    }
+}, {
+    "path": "test/{test_id}/{resource}",
+    "methods": ["get"],
+    "params": {
+        "test_id"           : "required",    // The test ID returned after starting the test
+        "resource"          : "required"     // Test resource to download: screenshot, har, pagespeed, pagespeed-files, yslow, report-pdf, video
+    }
+}]
